@@ -1,0 +1,74 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>index.html.md</title><style></style></head><body id="preview">
+<h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="AnimeRate_0"></a>AnimeRate</h1>
+<h2 class="code-line" data-line-start=2 data-line-end=3 ><a id="Overview_2"></a>Overview</h2>
+<p class="has-line-data" data-line-start="4" data-line-end="5">AnimeRate is a full-stack web application for rating and discovering anime. Users can search for anime titles, rate them on a 1-10 scale, and explore popular series. The application integrates with the Jikan API (MyAnimeList’s API) to fetch comprehensive anime data and provides a modern, responsive interface for anime enthusiasts to track their viewing preferences.</p>
+<h2 class="code-line" data-line-start=6 data-line-end=7 ><a id="User_Preferences_6"></a>User Preferences</h2>
+<p class="has-line-data" data-line-start="8" data-line-end="9">Preferred communication style: Simple, everyday language.</p>
+<h2 class="code-line" data-line-start=10 data-line-end=11 ><a id="System_Architecture_10"></a>System Architecture</h2>
+<h3 class="code-line" data-line-start=12 data-line-end=13 ><a id="Frontend_Architecture_12"></a>Frontend Architecture</h3>
+<ul>
+<li class="has-line-data" data-line-start="13" data-line-end="14"><strong>Framework</strong>: React with TypeScript using Vite as the build tool</li>
+<li class="has-line-data" data-line-start="14" data-line-end="15"><strong>UI Library</strong>: Shadcn/ui components built on Radix UI primitives with Tailwind CSS styling</li>
+<li class="has-line-data" data-line-start="15" data-line-end="16"><strong>State Management</strong>: TanStack Query (React Query) for server state management and caching</li>
+<li class="has-line-data" data-line-start="16" data-line-end="17"><strong>Routing</strong>: Wouter for lightweight client-side routing</li>
+<li class="has-line-data" data-line-start="17" data-line-end="19"><strong>Styling</strong>: Tailwind CSS with custom dark theme variables and Inter font integration</li>
+</ul>
+<h3 class="code-line" data-line-start=19 data-line-end=20 ><a id="Backend_Architecture_19"></a>Backend Architecture</h3>
+<ul>
+<li class="has-line-data" data-line-start="20" data-line-end="21"><strong>Runtime</strong>: Node.js with Express.js framework</li>
+<li class="has-line-data" data-line-start="21" data-line-end="22"><strong>Language</strong>: TypeScript with ES modules</li>
+<li class="has-line-data" data-line-start="22" data-line-end="23"><strong>Database ORM</strong>: Drizzle ORM with PostgreSQL dialect</li>
+<li class="has-line-data" data-line-start="23" data-line-end="24"><strong>Session Management</strong>: Express sessions with PostgreSQL session store</li>
+<li class="has-line-data" data-line-start="24" data-line-end="25"><strong>API Integration</strong>: Fetch-based integration with Jikan API (MyAnimeList)</li>
+<li class="has-line-data" data-line-start="25" data-line-end="27"><strong>Error Handling</strong>: Centralized error middleware with structured JSON responses</li>
+</ul>
+<h3 class="code-line" data-line-start=27 data-line-end=28 ><a id="Database_Schema_27"></a>Database Schema</h3>
+<ul>
+<li class="has-line-data" data-line-start="28" data-line-end="29"><strong>anime table</strong>: Stores cached anime data from Jikan API including MAL ID, titles, genres, synopsis, images, episodes, status, scores, and metadata</li>
+<li class="has-line-data" data-line-start="29" data-line-end="30"><strong>ratings table</strong>: User ratings linked to anime entries with UUID primary keys, user IDs, and timestamp tracking</li>
+<li class="has-line-data" data-line-start="30" data-line-end="32"><strong>Database Provider</strong>: Neon Database (serverless PostgreSQL)</li>
+</ul>
+<h3 class="code-line" data-line-start=32 data-line-end=33 ><a id="Data_Flow_32"></a>Data Flow</h3>
+<ul>
+<li class="has-line-data" data-line-start="33" data-line-end="34"><strong>Anime Discovery</strong>: Fetches popular anime and search results from Jikan API, caches in local database</li>
+<li class="has-line-data" data-line-start="34" data-line-end="35"><strong>Rating System</strong>: Stores user ratings locally with real-time updates and statistics calculation</li>
+<li class="has-line-data" data-line-start="35" data-line-end="36"><strong>Caching Strategy</strong>: TanStack Query provides client-side caching with configurable stale times</li>
+<li class="has-line-data" data-line-start="36" data-line-end="38"><strong>Memory Fallback</strong>: In-memory storage implementation for development/testing environments</li>
+</ul>
+<h3 class="code-line" data-line-start=38 data-line-end=39 ><a id="Component_Architecture_38"></a>Component Architecture</h3>
+<ul>
+<li class="has-line-data" data-line-start="39" data-line-end="40"><strong>Modular Components</strong>: Reusable UI components (AnimeCard, RatingStars, SearchHeader, SidebarFilters)</li>
+<li class="has-line-data" data-line-start="40" data-line-end="41"><strong>Modal System</strong>: Dialog-based rating interface with form validation</li>
+<li class="has-line-data" data-line-start="41" data-line-end="42"><strong>Responsive Design</strong>: Mobile-first approach with adaptive layouts</li>
+<li class="has-line-data" data-line-start="42" data-line-end="44"><strong>State Synchronization</strong>: Optimistic updates with server reconciliation</li>
+</ul>
+<h3 class="code-line" data-line-start=44 data-line-end=45 ><a id="Development_Workflow_44"></a>Development Workflow</h3>
+<ul>
+<li class="has-line-data" data-line-start="45" data-line-end="46"><strong>Build Process</strong>: Vite for frontend bundling, esbuild for server compilation</li>
+<li class="has-line-data" data-line-start="46" data-line-end="47"><strong>Development Server</strong>: Vite middleware integration with Express for seamless full-stack development</li>
+<li class="has-line-data" data-line-start="47" data-line-end="49"><strong>Type Safety</strong>: Shared TypeScript types between frontend and backend via shared directory</li>
+</ul>
+<h2 class="code-line" data-line-start=49 data-line-end=50 ><a id="External_Dependencies_49"></a>External Dependencies</h2>
+<h3 class="code-line" data-line-start=51 data-line-end=52 ><a id="APIs_and_Services_51"></a>APIs and Services</h3>
+<ul>
+<li class="has-line-data" data-line-start="52" data-line-end="53"><strong>Jikan API v4</strong>: Official MyAnimeList API for anime data, ratings, and metadata</li>
+<li class="has-line-data" data-line-start="53" data-line-end="55"><strong>Neon Database</strong>: Serverless PostgreSQL hosting with connection pooling</li>
+</ul>
+<h3 class="code-line" data-line-start=55 data-line-end=56 ><a id="Key_Libraries_55"></a>Key Libraries</h3>
+<ul>
+<li class="has-line-data" data-line-start="56" data-line-end="57"><strong>UI Framework</strong>: React 18 with TypeScript and Wouter routing</li>
+<li class="has-line-data" data-line-start="57" data-line-end="58"><strong>Database</strong>: Drizzle ORM with Neon serverless PostgreSQL adapter</li>
+<li class="has-line-data" data-line-start="58" data-line-end="59"><strong>HTTP Client</strong>: Axios for API requests with interceptors</li>
+<li class="has-line-data" data-line-start="59" data-line-end="60"><strong>Form Management</strong>: React Hook Form with Zod validation</li>
+<li class="has-line-data" data-line-start="60" data-line-end="61"><strong>Component Library</strong>: Radix UI primitives with Shadcn/ui styling system</li>
+<li class="has-line-data" data-line-start="61" data-line-end="62"><strong>Styling</strong>: Tailwind CSS with class-variance-authority for component variants</li>
+<li class="has-line-data" data-line-start="62" data-line-end="64"><strong>Build Tools</strong>: Vite with React plugin and Replit-specific development enhancements</li>
+</ul>
+<h3 class="code-line" data-line-start=64 data-line-end=65 ><a id="Development_Tools_64"></a>Development Tools</h3>
+<ul>
+<li class="has-line-data" data-line-start="65" data-line-end="66"><strong>Runtime Error Handling</strong>: Replit runtime error modal integration</li>
+<li class="has-line-data" data-line-start="66" data-line-end="67"><strong>Code Mapping</strong>: Source map support for debugging</li>
+<li class="has-line-data" data-line-start="67" data-line-end="68"><strong>Session Storage</strong>: Connect-pg-simple for PostgreSQL session persistence</li>
+</ul>
+
+</body></html>
