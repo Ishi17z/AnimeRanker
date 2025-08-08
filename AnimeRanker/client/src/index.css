@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: hsl(339, 100%, 70%);
+  --secondary: hsl(257, 100%, 77%);
+  --accent: hsl(210, 100%, 69%);
+  --highlight: hsl(339, 100%, 70%);
+  --warning: hsl(353, 100%, 69%);
+  --success: hsl(175, 60%, 60%);
+  --muted: hsl(0, 0%, 60%);
+  
+  --background: hsl(0, 0%, 97%);
+  --foreground: hsl(0, 0%, 20%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(0, 0%, 20%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(0, 0%, 20%);
+  --primary-color: var(--primary);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary-color: var(--secondary);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted-bg: hsl(0, 0%, 95%);
+  --muted-foreground: var(--muted);
+  --accent-bg: var(--accent);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: var(--warning);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(0, 0%, 85%);
+  --input: hsl(0, 0%, 92%);
+  --ring: var(--accent);
+  --radius: 0.5rem;
+  --font-inter: 'Inter', sans-serif;
+}
+
+.dark {
+  --background: hsl(0, 0%, 97%);
+  --foreground: hsl(0, 0%, 20%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(0, 0%, 20%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(0, 0%, 20%);
+  --primary-color: var(--primary);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary-color: var(--secondary);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted-bg: hsl(0, 0%, 95%);
+  --muted-foreground: var(--muted);
+  --accent-bg: var(--accent);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: var(--warning);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(0, 0%, 85%);
+  --input: hsl(0, 0%, 92%);
+  --ring: var(--accent);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-inter);
+  }
+}
+
+@layer utilities {
+  .text-primary {
+    color: var(--primary);
+  }
+  
+  .text-secondary {
+    color: var(--secondary);
+  }
+  
+  .text-accent {
+    color: var(--accent);
+  }
+  
+  .text-highlight {
+    color: var(--highlight);
+  }
+  
+  .text-warning {
+    color: var(--warning);
+  }
+  
+  .text-success {
+    color: var(--success);
+  }
+  
+  .text-muted {
+    color: var(--muted);
+  }
+  
+  .bg-primary {
+    background-color: var(--primary);
+  }
+  
+  .bg-secondary {
+    background-color: var(--secondary);
+  }
+  
+  .bg-accent {
+    background-color: var(--accent);
+  }
+  
+  .bg-highlight {
+    background-color: var(--highlight);
+  }
+  
+  .bg-warning {
+    background-color: var(--warning);
+  }
+  
+  .bg-success {
+    background-color: var(--success);
+  }
+  
+  .bg-muted {
+    background-color: var(--muted);
+  }
+  
+  .border-accent {
+    border-color: var(--accent);
+  }
+  
+  .hover\:bg-highlight:hover {
+    background-color: var(--highlight);
+  }
+  
+  .hover\:bg-accent:hover {
+    background-color: var(--accent);
+  }
+}
